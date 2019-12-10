@@ -42,7 +42,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 function oik_thugin_loaded() {
   add_action( 'oik_fields_loaded', 'oik_thugin_oik_fields_loaded', 16 );
 	add_action( "wp_enqueue_scripts", "oik_thugin_enqueue_scripts", 12 );
-	add_filter( 'genesis_footer_creds_text', "oik_thugin_genesis_footer_creds_text", 11 );
+	add_filter( 'genesis_pre_get_option_footer_text', "oik_thugin_genesis_footer_creds_text", 11 );
 	//add_action( 'genesis_entry_footer', 'oik_thugin_genesis_entry_footer', 11 );
 	//add_filter( "register_post_type_args", "oik_thugin_register_post_type_args", 10, 2 );
 }
