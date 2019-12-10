@@ -2,17 +2,17 @@
 /**
 Plugin Name: oik-thugin
 Depends: oik base plugin, oik fields, oik themes, oik-shortcodes
-Plugin URI: http://www.bobbingwide.com/blog/oik_plugins/oik-thugin
+Plugin URI: https://www.bobbingwide.com/blog/oik_plugins/oik-thugin
 Description: Letter taxonomies for oik-plugins.com	- pseudo grandchild theme
-Version: 0.0.0
+Version: 0.1.0
 Author: bobbingwide
-Author URI: http://www.oik-plugins.com/author/bobbingwide
+Author URI: https://bobbingwide.com/about-bobbing-wide
 Text Domain: oik_thugin
 Domain Path: /languages/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-    Copyright 2017 Bobbing Wide (email : herb@bobbingwide.com )
+    Copyright 2017-2019 Bobbing Wide (email : herb@bobbingwide.com )
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License version 2,
@@ -59,6 +59,7 @@ function oik_thugin_loaded() {
  * 
  */ 
 function oik_thugin_oik_fields_loaded() {
+	oik_thugin_register_oik_faq();
 	register_taxonomy_for_object_type( "letters", "page" ); 
 	bw_register_field_for_object_type( "letters", "page" );
 	
@@ -88,6 +89,27 @@ function oik_thugin_oik_fields_loaded() {
 }
 
 /**
+ * Registers the oik-faq CPT
+ *
+ */
+function oik_thugin_register_oik_faq() {
+	$post_type = 'oik-faq';
+	$post_type_args = array();
+	$post_type_args['label'] = 'FAQ';
+	$post_type_args['description'] = 'Frequently Asked Questions';
+	$post_type_args['supports'] = array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions', 'author', 'publicize', 'clone' );
+	//$post_type_args['taxonomies'] = array( "oik_tags" );
+	$post_type_args['has_archive'] = true;
+	$post_type_args['menu_icon'] = 'dashicons-admin-plugins';
+	$post_type_args['show_in_rest'] = true;
+	//$post_type_args['template'] = oikp_oik_plugins_CPT_template();
+	bw_register_post_type( $post_type, $post_type_args );
+
+
+
+}
+
+/**
  * Implements 'register_post_type_args' for cloning
  *
  * This should only be done on the master, not the slave
@@ -95,7 +117,7 @@ function oik_thugin_oik_fields_loaded() {
 	
 function oik_thugin_register_post_type_args( $args, $post_type ) {
 	
-	$post_types = array( "post", "page", "oik-plugins", "attachment", "oik-themes" );
+	$post_types = array( "post", "page", "oik-plugins", "attachment", "oik-themes", 'oik-faq' );
 	bw_trace2( $post_types, "post_types", false );
 	$add_clone = in_array( $post_type, $post_types );
 	if ( $add_clone ) {
