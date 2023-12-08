@@ -4,7 +4,7 @@ Plugin Name: oik-thugin
 Depends: oik base plugin, oik fields, oik themes, oik-shortcodes
 Plugin URI: https://www.bobbingwide.com/blog/oik_plugins/oik-thugin
 Description: Letter taxonomies for oik-plugins.com	- pseudo grandchild theme
-Version: 0.1.0
+Version: 0.1.1
 Author: bobbingwide
 Author URI: https://bobbingwide.com/about-bobbing-wide
 Text Domain: oik_thugin
@@ -12,7 +12,7 @@ Domain Path: /languages/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-    Copyright 2017-2019 Bobbing Wide (email : herb@bobbingwide.com )
+    Copyright 2017-2023 Bobbing Wide (email : herb@bobbingwide.com )
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License version 2,

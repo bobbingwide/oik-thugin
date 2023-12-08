@@ -3,8 +3,8 @@ Contributors: bobbingwide
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: grandchild, theme, thugin, pleme
 Requires at least: 5.0
-Tested up to: 5.3.1
-Stable tag: 0.1.0
+Tested up to: 6.4.2
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,9 @@ It's implemented as a plugin since WordPress doesn't support real grandchild the
 1. oik-thugin in action
 
 == Upgrade Notice ==
+= 0.1.1 =
+Update for support for PHP 8.3. 
+
 = 0.1.0 =
 Upgrade for WordPress 5.0 and Genesis 3.2.1 support 
 
@@ -49,6 +52,14 @@ Improves display of single posts and the overall page layout.
 New plugin, available from GitHub.
 
 == Changelog ==
+= 0.1.1 = 
+* Changed: Change footer cred text. #6. 
+* Changed: Don't enqueue oik-thugin.css #7
+* Changed: Add PHPUnit tests for PHP 8.3 #4
+* Tested: With WordPress 6.4.2 and WordPress Multisite
+* Tested: With PHP 8.3
+* Tested: With PHPUnit 9.6 
+
 = 0.1.0 = 
 * Changed: Support Genesis 3.2.1
 * Changed: Register oik_faq for REST API
@@ -69,4 +80,3 @@ New plugin, available from GitHub.
 If you want to read more about the oik plugins then please visit the
 [oik plugin](https://www.oik-plugins.com/oik) 
 **"the oik plugin - for often included key-information"**
-
